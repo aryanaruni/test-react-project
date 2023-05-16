@@ -1,23 +1,49 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './NavBar'
+import Card from './Card'
+const data = [
+  {
+    id: 1,
+    title: 'John1',
+  },
+  {
+    id: 2,
+    title: 'John2',
+  },
+  {
+    id: 3,
+    title: 'John3',
+  },
+  {
+    id: 4,
+    title: 'John4',
+  },
+  {
+    id: 5,
+    title: 'John4',
+  },
+  {
+    id: 6,
+    title: 'John4',
+  }
+]
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <div className='row'>
+        {
+          data.map(datum=>{
+            return (
+              <Card datum = {datum}/>
+            )
+          })
+        }
+        
+      </div>
     </div>
   );
 }
